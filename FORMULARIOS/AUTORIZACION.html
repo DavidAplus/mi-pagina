@@ -189,7 +189,7 @@
                     })
                 }
                 
-                const filespagina = JSON.parse(localStorage.getItem(filespagina)) || [];
+                const filespagina = JSON.parse(localStorage.getItem('filespagina')) || [];
 
                 for(const file of archivosdeindicacion){
                     const contenido = await convertbase64(file);
