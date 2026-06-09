@@ -274,7 +274,7 @@
         nocedula.addEventListener('input', async function(){
             let valor = this.value;
            if(valor.length === 13) {
-                const respuesta = await fetch("serverbasedatos-gnefccfqbaa7gwaa.canadacentral-01.azurewebsites.net/cedula/" + valor);
+                const respuesta = await fetch("https://serverbasedatos-gnefccfqbaa7gwaa.canadacentral-01.azurewebsites.net/cedula/" + valor);
                 const dato = await respuesta.json();
                 console.log(dato);
                 document.getElementById('CORREO').value = dato[0].CORREO;
