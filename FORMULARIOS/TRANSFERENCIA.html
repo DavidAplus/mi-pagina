@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FORMA DE PAGO TRANSFERENCIA</title>
+        <style>
+            .TituloCentrado{
+                color: rgb(0, 0, 0);
+                text-align: left;
+                font-size: 45px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 10px 10px 0cm 0cm;
+                padding: 50px;
+                margin: 0px auto;
+                width: 800px;
+                height: 120px;
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                font-family: arial;
+                letter-spacing: 2px;
+            }
+            body{
+                margin: 0px;
+                background-color: rgba(189, 226, 243, 0.733);
+            }
+            form{
+                background-color: rgb(255, 255, 255);
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                padding: 50px;
+                width:800px;
+                height: auto;
+                margin: 0px auto;
+                border-radius: 0cm 0cm 1cm 1cm;
+                padding-bottom: 80px;
+            }
+           h4{
+               top: 500px;
+                position:absolute;
+                right: 530px;
+                color:rgb(92, 65, 65);
+                font-size: 20px;
+             }
+            h6{
+                top: 520px;
+                position:absolute;
+                right: 530px;
+                color:rgb(128, 128, 128);
+                font-size: 15px;
+            }
+            h5{
+                position: absolute;
+                top: 650px;
+                right: 760px;
+                font-size: 18px;
+                color:rgb(128, 128, 128);
+                font-family: Arial;
+            }
+            input{
+                padding: 10px;
+                border-radius: 5px;
+                width: 500px;
+                font-size: 20px;
+            }
+            select{
+                padding: 10px;
+                border-radius: 5px;
+                width: 600px;
+                font-size: 20px;
+            }
+            label{
+              font-weight: 540;
+              font-size: 20px;
+              color: #000000;
+              letter-spacing: 0.5px;
+              font-family: Arial;
+            }
+            .option{
+                font-weight: 0px;
+                font-size: 20px;
+            }
+            .inputselect{
+               width: 20px;
+               height: 20px;
+            }
+            .title{
+                position: relative;
+                top: 40px;
+            }
+            img{
+               display: block;
+               margin: 20px auto;
+            }
+            .next{
+                width: 129px;
+                background: rgb(223, 184, 255);
+                color: rgb(2, 2, 2);
+                float: right;
+            }
+            #carga{
+                position: fixed;
+                top: 0%;
+                justify-content: center;
+                align-items: center;
+                background: rgba(156, 150, 150, 0.365);
+                display: none;
+                width: 100%;
+                height: 100%;
+            }
+            #atras{
+              width: auto;
+              float: left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img src="/IMAGENES.png/OIP (1).png" alt="Logo">
+        <div id="carga"> 
+            <img src="/IMAGENES.png/cargando.gif">
+        </div>
+        <h1 class="TituloCentrado">
+            <span class="title">
+          TRANSFERENCIA</span>
+        </h1>
+        <h5>PARA ASISTENCIA PONERSE EN CONTACTO CON <a href="https://wa.me/18297484467">+1 (829) 748-4467</a></h5>
+        <h4>(FO-OPE-RS-01)</h4>
+        <h6>(código del formulario)</h6>
+        <form id="transferencias">
+            <label>MONTO</label>
+            <br>
+            <br>
+            <input type="text" id="monto" name="monto" required>
+             <br>
+             <br>
+           <label>ENTIDAD BANCARIA</label>
+           <br>
+           <br>
+           <input type="text" id="entidad" name="entidad" required>
+           <br>
+           <br>
+           <label>NOMBRE DE CUENTA</label>
+           <br>
+           <br>
+           <input type="text" id="nombreCuenta" name="nombreCuenta" required>
+           <br>
+           <br>
+            <label>NUMERO DE CUENTA</label>
+            <br>
+            <br>
+            <input type="text" id="NOCUENTA" name="numeroCuenta" required>
+             <br>
+             <br>
+             <label>TIPO DE CUENTA</label>
+             <br>
+             <br>
+             <select id="tipoCuenta" name="tipoCuenta" required>
+                 <option value="">Seleccione una opción</option>
+                 <option value="AHORROS">AHORROS</option>
+                 <option value="CORRIENTE">CORRIENTE</option>
+             </select>
+              <br>
+              <br>
+              <br>
+            <input class="next" type="submit" id="entregar" value="ENTREGAR">
+            <input type="button" id="atras" value="ATRAS" onclick="history.back()">
+        </form>
+        <script>
+          //validacion para numero de cuenta
+          const numeroCuenta = document.getElementById('NOCUENTA');
+          numeroCuenta.addEventListener('input', function() {
+              this.value = this.value.replace(/\D/g, '');
+          });
+          // config del boton pa entregar
+          const boton = document.getElementById('entregar');
+          const cargando = document.getElementById('carga')
+          boton.addEventListener('click', async function(X){
+            X.preventDefault();
+            cargando.style.display = 'flex'
+            boton.disabled = true
+            //guardar todito lo dato
+
+            //esta pagina
+          const transferencias = document.getElementById('transferencias'); 
+          const DatosTransferencias = new FormData(transferencias);
+          const objeto = Object.fromEntries(DatosTransferencias.entries());
+          localStorage.setItem('transferencias', JSON.stringify(objeto));
+
+          // datos finales 
+          const datosfinales = {
+              pagina1: JSON.parse(localStorage.getItem('formulario1')),
+              pagina2: JSON.parse(localStorage.getItem('reclamosS2')),
+              autorizacion: JSON.parse(localStorage.getItem('autorizacion')),
+              pagina3: JSON.parse(localStorage.getItem('transferencias')),
+              filespagina: JSON.parse(localStorage.getItem('filespagina'))
+             };
+
+          //sharepoint
+           await fetch('https://defaultc78fcef3592941de8ed54896f11961.32.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/30f8a0dd1c71421ebcfea439eb3cdead/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=taaZJr7pjfMy8OswRXhkQLJx9a7RGRtYBsxI_9d_Bu0',
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json'},
+                body: JSON.stringify(datosfinales)
+            }
+          );
+          cargando.style.display = 'none'
+          location.href='/GRACIAS.html'
+          });
+        </script>
+    </body>
+</html>

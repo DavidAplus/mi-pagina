@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FORMULARIO DE REEMBOLSOS DE SALUD</title>
+        <style>
+            .TituloCentrado{
+                color: rgb(0, 0, 0);
+                text-align: left;
+                font-size: 45px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 10px 10px 0cm 0cm;
+                padding: 50px;
+                margin: 0px auto;
+                width: 800px;
+                height: 120px;
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                font-family: arial;
+                letter-spacing: 2px;
+            }
+            body{
+                margin: 0px;
+                background-color: rgba(189, 226, 243, 0.733);
+            }
+            form{
+                background-color: rgb(255, 255, 255);
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                padding: 50px;
+                width:800px;
+                height: auto;
+                margin: 0px auto;
+                border-radius: 0cm 0cm 1cm 1cm;
+                padding-bottom: 80px;
+            }
+           h4{
+               top: 500px;
+                position:absolute;
+                right: 530px;
+                color:rgb(92, 65, 65);
+                font-size: 20px;
+             }
+            h6{
+                top: 520px;
+                position:absolute;
+                right: 530px;
+                color:rgb(128, 128, 128);
+                font-size: 15px;
+            }
+            h5{
+                position: absolute;
+                top: 650px;
+                right: 760px;
+                font-size: 18px;
+                color:rgb(128, 128, 128);
+                font-family: Arial;
+            }
+            input{
+                padding: 10px;
+                border-radius: 5px;
+                width: 500px;
+                font-size: 20px;
+            }
+            select{
+                padding: 10px;
+                border-radius: 5px;
+                width: 600px;
+                font-size: 20px;
+            }
+            label{
+              font-weight: 540;
+              font-size: 20px;
+              color: #000000;
+              letter-spacing: 0.5px;
+              font-family: Arial;
+            }
+            .option{
+                font-weight: 0px;
+                font-size: 20px;
+            }
+            .inputselect{
+               width: 20px;
+               height: 20px;
+            }
+            .title{
+                position: relative;
+                top: 40px;
+            }
+            #LOGO{
+               display: block;
+               margin: 20px auto;
+            }
+            #boton{
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               float: right;
+               width: auto;
+            }
+            #loading{
+                position: fixed;
+                top: 0%;
+                display: none;
+                justify-content: center;
+                background-color: rgba(44, 48, 52, 0.283);
+                width: 100%;
+                height: 100%;
+                align-items: center;
+            }
+            #atras{
+               width: auto;
+               background-color: darkgrey;
+               padding: 10px;
+               float: left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img id="LOGO"src="/IMAGENES.png/OIP (1).png" alt="Logo">
+        <div id="loading">
+            <img src="/IMAGENES.png/cargando.gif">
+        </div>
+        <h1 class="TituloCentrado">
+            <span class="title">
+          FORMULARIO DE REEMBOLSOS</span>
+        </h1>
+        <h5>PARA ASISTENCIA PONERSE EN CONTACTO CON <a href="https://wa.me/18297484467">+1 (829) 748-4467</a></h5>
+        <h4>(FO-OPE-RS-01)</h4>
+        <h6>(código del formulario)</h6>
+        <form id="reclamosS2">
+            <label>MONTO</label>
+            <br>
+            <br>
+          <input type="text" name="monto" id="monto" placeholder="ingrese monto reclamado">
+            <br>
+            <br>
+            <label>FECHA DEL RECIBO</label>
+            <br>
+            <br>
+            <input type="date" name="fecha" id="fecha">
+            <br>
+            <br>
+            <br>
+        <div id="RECIBO" style="display: none;">
+            <label>ADJUNTAR RECIBO</label>
+            <br>
+            <br> 
+            <input type ="file" name="RECIBO" id="elrecibo" accept=".pdf, .jpg, .jpeg, .png" multiple>
+            <br>
+            <br>
+        </div>
+        <div id="INDICACIONES" style="display: none;">
+            <label>INDICACIONES</label>
+            <br>
+            <br>
+            <input type="file" name="INDICACIONES" id="indica" accept=".pdf, .jpg, .jpeg, .png" multiple>
+            <br>
+        <br>
+        </div>
+        <div id="ESTUDIOS" style="display: none;">
+            <label>RESULTADOS DE ESTUDIOS</label>
+            <br>
+            <br>
+            <input type="file" name="ESTUDIOS" id="estudi" accept=".pdf, .jpg, .jpeg, .png" multiple>
+            <br>
+        <br>
+        </div>
+        <div id="HISTORIAL" style="display: none;">
+            <label>HISTORIAL CLINICO</label>
+            <br>
+            <br>
+            <input type="file" name="HISTORIAL" id="history" accept=".pdf, .jpg, .jpeg, .png" multiple>
+        <br>
+        <br>
+        </div>
+            <div id="RADIOGRAFIA" style="display: none">
+            <label >RADIOGRAFIA/FOTOGRACIA PRE-COLOCACION</label>
+            <br>
+            <br>
+            <input type="file" name="RADIOGRAFIA" id="radiog" accept=".pdf, .jpg, .jpeg, .png" multiple>
+            <br>
+            <br>
+            </div>
+            <div id="FACTURA" style="display: none">
+            <label>FACTURA</label>
+            <br>
+            <br>
+            <input type="file" name="FACTURA" id="fact" accept=".pdf, .jpg, .jpeg, .png" multiple>
+            <br>
+            <br>
+            </div>
+            <div id="MEDICO">
+            <label >MEDICO TRATANTE</label>
+            <br>
+            <br>
+            <input type="text" name="MEDICO" id="medic" placeholder="ingrese nombre del medico tratante">
+            <br>
+            <br>
+            </div>
+            <div id="ESPECIALIDAD">
+            <label>ESPECIALIDAD</label>
+            <br>
+            <br>
+            <input type="text" name="ESPECIALIDAD"  placeholder="ingrese especialidad">
+            <br>
+            <br>
+            </div>
+            <div  id="CLINICA">
+            <label>CLINICA</label>
+            <br>
+            <br>
+            <input type="text" name="CLINICA" placeholder="ingrese nombre de la clínica">
+            <br>
+            <br>
+            </div>
+            <label>FORMA DE PAGO</label>
+            <br>
+            <br>
+            <input class="inputselect" type="radio" name="formapago" id="formapago" value="TRANSFERENCIA">
+            <label class="option">TRANSFERENCIA</label>
+            <br>
+            <input class="inputselect" type="radio" name="formapago" id="formapago" value="CHEQUE">
+            <label class="option">CHEQUE</label>
+            <br>
+            <br>
+            <input type= "button" id="boton" value= "SIGUIENTE">
+            <input type="button" id="atras" value="ATRAS" onclick="history.back()">
+        </form>
+        <script>
+            // Validación para el campo de monto, solo permite números
+          const monto = document.getElementById('monto');
+          monto.addEventListener('input', function() {
+              this.value = this.value.replace(/\D/g, '')
+          });
+          // boton de siguiente propiedades
+           const formapago = document.getElementsByName('formapago');
+           let nextone = '/FORMULARIOS/REEMBOLSOS2.html';
+           let boton = document.getElementById('boton');
+
+           formapago.forEach(function(X){
+             X.addEventListener('change', function(){
+                if(this.value === 'TRANSFERENCIA'){
+                    boton.value = 'SIGUIENTE';
+                    boton.type = 'button';
+                    nextone = '/FORMULARIOS/TRANSFERENCIA.html';
+                    boton.onclick = function() {
+                        location.href = nextone;
+                    }
+                } else { boton.value = 'ENVIAR';
+                    boton.type = 'submit';
+                    nextone = ''
+                    
+                }
+           })});
+           // seleccion de cuale son lo documento que van a aparece en la pagina
+           //obtener procedimiento seleccionado de la pagina anterior
+
+           const paginanterior = JSON.parse(localStorage.getItem('formulario1'));
+
+           const procedimientoanterior = paginanterior.procedimiento;
+           const recibo = document.getElementById('RECIBO');
+           const indicacion = document.getElementById('INDICACIONES');
+           const estudios = document.getElementById('ESTUDIOS');
+           const historia = document.getElementById('HISTORIAL');
+           const radiografia = document.getElementById('RADIOGRAFIA');
+           const factura = document.getElementById('FACTURA');
+
+           if(procedimientoanterior === 'CONSULTA DE NUTRICION'){
+             recibo.style.display = 'block';
+             estudios.style.display = 'block';
+             historia.style.display = 'block';
+             factura.style.display = 'block';
+           }
+           if(procedimientoanterior === 'CONSULTAS'){
+            recibo.style.display = 'block';
+           }
+           if(procedimientoanterior === 'DIÁLISIS'){
+            recibo.style.display = 'block';
+            indicacion.style.display = 'block';
+           }
+           if(procedimientoanterior === 'EMERGENCIAS'){
+            recibo.style.display = 'block';
+            factura.style.display = 'block';
+           }
+           if(procedimientoanterior === 'ESTUDIOS DE IMAGENES') {
+            recibo.style.display = 'block';
+            indicacion.style.display = 'block';
+            estudios.style.display = 'block';
+           }
+           if(procedimientoanterior === 'ESTUDIOS ESPECIALES'){
+            recibo.style.display = 'block';
+            indicacion.style.display = 'block';
+            estudios.style.display = 'block';
+           }
+           if(procedimientoanterior === 'MEDICINA'){
+            recibo.style.display = 'block';
+            indicacion.style.display ='block';
+           }
+           if(procedimientoanterior === 'ODONTOLOGÍA'){
+            recibo.style.display = 'block';
+            historia.style.display = 'block';
+            radiografia.style.display = 'block';
+           }
+           if(procedimientoanterior === 'PROCEDIMIENTOS AMBULATORIOS'){
+            recibo.style.display = 'block';
+            estudios.style.display = 'block';
+           }
+           if(procedimientoanterior === 'PRUEBAS DE LABORATORIO'){
+            recibo.style.display = 'block';
+            indicacion.style.display = 'block';
+            historia.style.display = 'block';
+            factura.style.display = 'block';
+           }
+           if(procedimientoanterior === 'QUIMIOTERAPIA'){
+            recibo.style.display = 'block';
+            indicacion.style.display = 'block';
+           }
+           if(procedimientoanterior === 'RADIOTERAPIA'){
+            recibo.style.display = 'block';
+            indicacion.style.display = 'block'
+           }
+           if(procedimientoanterior === 'TERAPIA'){
+            recibo.style.display = 'block';
+            estudios.style.display = 'block';
+            historia.style.display = 'block'
+           }
+           if(procedimientoanterior === 'TERAPIAS DE HABLA'){
+            recibo.style.display = 'block';
+            estudios.style.display = 'block';
+            historia.style.display = 'block';
+           }
+           if(procedimientoanterior === 'VACUNAS'){
+            recibo.style.display = 'block';
+           } else {}
+
+            //configuracion del boton 
+            const loading = document.getElementById('loading');
+         boton.addEventListener('click', async function(X){
+            X.preventDefault();
+            loading.style.display = 'flex';
+
+            //FUNCION PARA VOLVER FILE A BASE 64
+
+            const convertirbase64 = function(file){
+                return new Promise(function(resolve, reject){
+                    const read = new FileReader();
+                    read.readAsDataURL(file);
+                    read.onload = function(){
+                        resolve(read.result.split(',')[1]);
+                    };
+                    read.onerror = function(error){
+                        reject(error);
+                    }
+                })
+            }
+
+            //LO DOCUMENTOOO
+
+            const filerecibo = document.getElementById('elrecibo').files;
+            const fileindicaciones = document.getElementById('indica').files;
+            const fileestudios = document.getElementById('estudi').files;
+            const filehistorial = document.getElementById('history').files;
+            const fileradiografia = document.getElementById('radiog').files;
+            const filefactura = document.getElementById('fact').files;
+
+            const filespagina = JSON.parse(localStorage.getItem('filespagina')) || []
+
+            //CREAR EL ARRAY DE TODOS LOS DOCUMENTOS ADJUNTADOSS EN EL ARRAY VACIO FILEPAGINA
+
+            for(const file of filerecibo){
+                const contenido =  await convertirbase64(file);
+
+                filespagina.push({
+                    filename: file.name,
+                    filecontent: contenido
+                })
+            };
+
+            for(const file of fileindicaciones){
+                const contenido = await convertirbase64(file);
+
+                filespagina.push({
+                    filename: file.name,
+                    filecontent: contenido
+                })
+            };
+
+            for(const file of fileestudios){
+                const contenido = await convertirbase64(file);
+
+                filespagina.push({
+                    filename: file.name,
+                    filecontent: contenido
+                })
+            };
+
+            for(const file of filehistorial){
+                const contenido = await convertirbase64(file);
+
+                filespagina.push({
+                    filename: file.name,
+                    filecontent: contenido
+                })
+            };
+
+            for(const file of fileradiografia){
+                const contenido = await convertirbase64(file);
+
+                filespagina.push({
+                    filename: file.name,
+                    filecontent: contenido
+                })
+            };
+
+            for(const file of filefactura){
+                const contenido = await convertirbase64(file);
+
+                filespagina.push({
+                    filename: file.name,
+                    filecontent: contenido
+                })
+            };
+
+            localStorage.setItem('filespagina', JSON.stringify(filespagina));
+
+            // DATOS TEXTO DEL FORMULARIO
+            const reclamosS2 = document.getElementById('reclamosS2');
+            const DatosReclamosS2 = new FormData(reclamosS2);
+            const objeto = Object.fromEntries(DatosReclamosS2.entries());
+            localStorage.setItem('reclamosS2', JSON.stringify(objeto));
+
+            const datosfinales = {
+              pagina1: JSON.parse(localStorage.getItem('formulario1')),
+              pagina2: JSON.parse(localStorage.getItem('reclamosS2')),
+              autorizacion: JSON.parse(localStorage.getItem('autorizacion')),
+              pagina3: JSON.parse(localStorage.getItem('transferencias')),
+              filespagina: JSON.parse(localStorage.getItem('filespagina'))
+             };
+
+            //pa el envio 
+           const seleccionado = document.querySelector('input[name="formapago"]:checked');
+            if(seleccionado.value === 'CHEQUE') {
+
+                await fetch('https://defaultc78fcef3592941de8ed54896f11961.32.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/30f8a0dd1c71421ebcfea439eb3cdead/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=taaZJr7pjfMy8OswRXhkQLJx9a7RGRtYBsxI_9d_Bu0',
+              {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json'},
+                body: JSON.stringify(datosfinales)
+              }
+                );
+                loading.style.display = 'none'
+                location.href = '/GRACIAS.html'
+            } else {}
+            });
+        </script>
+    </body>
+</html>

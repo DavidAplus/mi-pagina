@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FORMULARIO DE REEMBOLSOS Y AUTORIZACIONES DE PERSONAS</title>
+        <style>
+            .TituloCentrado{
+                color: rgb(0, 0, 0);
+                text-align: left;
+                background-color: rgb(255, 255, 255);
+                border-radius: 10px 10px 0cm 0cm;
+                padding: 50px;
+                margin: 0px auto;
+                width: 800px;
+                height: 120px;
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                font-family: arial;
+                letter-spacing: 2px;
+            }
+            body{
+                margin: 0px;
+                background-color: rgba(189, 226, 243, 0.733);
+            }
+            form{
+                background-color: rgb(255, 255, 255);
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                padding: 50px;
+                width:800px;
+                height: auto;
+                margin: 0px auto;
+                border-radius: 0cm 0cm 1cm 1cm;
+            }
+           h4{
+               top: 500px;
+                position:absolute;
+                right: 530px;
+                color:rgb(92, 65, 65);
+                font-size: 20px;
+             }
+            h6{
+                top: 520px;
+                position:absolute;
+                right: 530px;
+                color:rgb(128, 128, 128);
+                font-size: 15px;
+            }
+            h5{
+                position: absolute;
+                top: 675px;
+                right: 912px;
+                color:rgb(128, 128, 128);
+                font-family: Arial;
+            }
+            input{
+                padding: 10px;
+                border-radius: 5px;
+                width: 500px;
+                font-size: 20px;
+            }
+            select{
+                padding: 10px;
+                border-radius: 5px;
+                width: 600px;
+                font-size: 20px;
+            }
+            label{
+              font-weight: 540;
+              font-size: 20px;
+              color: #000000;
+              letter-spacing: 0.5px;
+              font-family: Arial;
+            }
+            .option{
+                font-weight: 0px;
+                font-size: 20px;
+            }
+            .inputselect{
+               width: 20px;
+               height: 20px;
+            }
+            .title{
+                position: relative;
+                top: 40px;
+            }
+            img{
+               display: block;
+               margin: 20px auto;
+            }
+            .next{
+                width: 129px;
+                margin-left: 18cm;
+                background: rgb(93, 202, 245);
+                color: rgb(0, 0, 0);
+            }
+            #load{
+                position: fixed;
+                top: 0%;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(0, 0, 0, 0.41);
+                height: 100%;
+                width: 100%;
+            }
+           
+            
+        </style>
+    </head>
+
+    <body>
+        <img src="/IMAGENES.png/OIP (1).png" alt="Logo">
+        <div id="load">
+            <img src="/IMAGENES.png/cargando.gif">
+        </div>
+        <h1 class="TituloCentrado">
+            <span class="title">
+          FORMULARIO DE REEMBOLSOS Y AUTORIZACIONES DE SALUD</span>
+        </h1>
+        <h5>PARA ASISTENCIA PONERSE EN CONTACTO CON <a href="https://wa.me/18297484467">+1 (829) 748-4467</a></h5>
+        <h4>(FO-OPE-RS-01)</h4>
+        <h6>(código del formulario)</h6>
+        <form id="reclamosS">
+            <label>CEDULA ASEGURADO</label>
+            <br>
+            <br>
+            <input type="text" name="cedula" id="CEDULATITULAR" placeholder="ingrese cédula" maxlength="13" required>
+            <br>
+            <br>
+            <label>NOMBRE DE ASEGURADO</label>
+            <br>
+            <br>
+            <input type="text" name="nombre" id="NOMBREASEGURADO" required>
+            <br>
+            <br>
+            <br>
+            <label>INSTITUCION O EMPRESA DONDE LABORA</label>
+            <br>
+            <br>
+            <input type="text" name="empresa">
+            <br>
+            <br>
+            <br> 
+            <label>ASEGURADORA</label>
+            <br>
+            <br>
+            <select name="aseguradora">
+                <option value=""</option>
+                <option>HUMANO SEGUROS</option>
+                <option>MAPFRE SALUD</option>
+                <option>MAPFRE BHD</option>
+                <option>SEGUROS RESERVAS</option>
+                <option>UNIVERSAL</option>
+                <option>WORLDWIDE</option>
+                <option>SENASA</option>
+                <option>ARS YUNEN</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <br>
+            <label>TIPO DE SOLICITUD</label>
+            <br>
+            <br>
+            <input class="inputselect" type="radio" name="tiposolicitud" id="tiposolicitud" value="RECLAMO">
+            <label class="option">RECLAMO</label>
+            <br>
+            <input class="inputselect" type="radio" name="tiposolicitud" id="tiposolicitud" value="AUTORIZACION">
+            <label class="option">AUTORIZACION</labeL>
+            <br>
+            <div id="procedimiento" style="display: none";>
+            <br>
+            <br>
+            <label>PROCEDIMIENTO REALIZADO</label>
+            <br>
+            <br>
+            <select name="procedimiento">
+                <option value=""></option>
+                <option>CONSULTA DE NUTRICION</option>
+                <option>CONSULTAS</option>
+                <option>DIÁLISIS</option>
+                <option>EMERGENCIAS</option>
+                <option>ESTUDIOS DE IMAGENES</option>
+                <option>ESTUDIOS ESPECIALES</option>
+                <option>MEDICINA</option>
+                <option>ODONTOLOGÍA</option>
+                <option>PROCEDIMIENTOS AMBULATORIOS</option>
+                <option>PRUEBAS DE LABORATORIO</option>
+                <option>QUIMIOTERAPIA</option>
+                <option>RADIOTERAPIA</option>
+                <option>TERAPIA</option>
+                <option>TERAPIAS DE HABLA</option>
+                <option>VACUNAS</option>
+            </select>
+            </div>
+            <br>
+            <br>
+            <label>TIPO DE COBERTURA</label>
+            <br>
+            <br>
+            <input class="inputselect" type="radio" name="cobertura" value="LOCAL">
+            <label class="option">LOCAL</label>
+            <br>
+            <input class="inputselect" type="radio" name="cobertura" value="INTERNACIONAL">
+            <label class="option">INTERNACIONAL</label>
+            <br>
+            <br>
+            <br>
+            <label> CORREO</label>
+            <br>
+            <br>
+            <input type="email" name="correo" id="CORREO">
+            <br>
+            <br>
+            <labeL> NUMERO </labeL>
+            <br>
+            <br>
+            <input type="text" name="numero" id="NUMERO">
+            <br>
+            <br>
+            <br>
+            <br>
+            <label>CARNET DE SEGURO</label>
+            <br>
+            <br>
+            <input type="file" name="carnet"id='carnet' multiple>
+            <br>
+            <br>
+            <input class="next" id="boton" type="button" value="SIGUIENTE">
+        </form>
+        <script>
+            
+            const solicitudradio = document.getElementsByName('tiposolicitud');
+            const procedimiento = document.getElementById('procedimiento');
+            let seleccionform = '/FORMULARIOS/REEMBOLSOS2.html';
+
+            //esto para que se mantenga mostrado el campo procedimiento si el user vuelve patras
+
+            window.addEventListener('pageshow', function() {
+                const selecsol = document.querySelector('input[name="tiposolicitud"]:checked');
+            if(selecsol && selecsol.value === 'RECLAMO'){
+                procedimiento.style.display = 'block'
+            } else {procedimiento.style.display = 'none'}
+        });
+                  // este para que se muestre o no el campo de procedimiento si se cambia el tipo de solicitud
+
+            solicitudradio.forEach(
+                function(radi) {
+                    radi.addEventListener('change', function() {
+                        if(radi.value === 'RECLAMO') {procedimiento.style.display = 'block';
+                            seleccionform = '/FORMULARIOS/REEMBOLSOS2.html';
+                            } else if(radi.value === 'AUTORIZACION') {procedimiento.style.display = 'none';
+                            seleccionform = '/FORMULARIOS/AUTORIZACION.html';
+                        } else {procedimiento.style.display = 'none';}
+                    })
+                }
+            )
+            // formato de campo cedula
+             
+            const nocedula   = document.getElementById('CEDULATITULAR');
+
+            nocedula.addEventListener('input', function(){
+            let valor = this.value;
+            valor = valor.replace(/\D/g, '');
+            this.value = valor;
+
+            if(valor.length > 3){
+                valor = valor.slice(0, 3) + '-' + valor.slice(3);
+            }
+            this.value = valor;
+            if(valor.length> 11){
+                valor= valor.slice(0, 11) + '-' + valor.slice(11)
+            }
+            this.value = valor;
+
+            console.log(valor);
+        });
+
+        nocedula.addEventListener('input', async function(){
+            let valor = this.value;
+           if(valor.length === 13) {
+                const respuesta = await fetch("http://localhost:3000/cedula/" + valor);
+                const dato = await respuesta.json();
+                console.log(dato);
+                document.getElementById('CORREO').value = dato[0].CORREO;
+                document.getElementById('NOMBREASEGURADO').value = dato[0].NOMBRE_APELLIDO;
+                document.getElementById('NUMERO').value = dato[0].NUMERO;
+            }
+        });
+        // para guardar la informacion del formulario pag 1
+        const boton = document.getElementById('boton');
+        const carga = document.getElementById('load');
+
+        boton.addEventListener('click', async function() {
+
+        //GUARDAR EL CARNET DE SEGUROS
+
+         const carnetfile = document.getElementById('carnet').files;
+
+         //PARA CONVERTIR NUESTROS FILES EN BASE 64
+
+         const convertbase64 = function(file){
+            return new Promise(function(resolve, reject){
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function(){
+                    resolve(reader.result.split(',')[1])
+                };
+                reader.onerror = function(error){
+                    reject.error
+                };
+            })
+         }
+         
+         const carnetdocumentos = [];
+
+         for(const file of carnetfile){
+            carnetdocumentos.push({
+                filename:file.name,
+                filecontent:await convertbase64(file)
+            })
+         }
+
+
+         // guardar la vaina del documento
+         localStorage.setItem('filespagina', JSON.stringify(carnetdocumentos));
+
+         
+          //local save de textos
+          const formulario1 = document.getElementById('reclamosS');
+          const Datosg = new FormData(formulario1);
+          const objeto = Object.fromEntries(Datosg.entries());
+          localStorage.setItem('formulario1', JSON.stringify(objeto));
+
+          location.href = seleccionform
+        }
+    )
+        </script>
+
+    </body>
+</html>

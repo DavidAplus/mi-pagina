@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FORMULARIO DE AUTORIZACIONES</title>
+        <style>
+            .TituloCentrado{
+                color: rgb(0, 0, 0);
+                text-align: left;
+                font-size: 45px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 10px 10px 0cm 0cm;
+                padding: 50px;
+                margin: 0px auto;
+                width: 800px;
+                height: 150px;
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                font-family: arial;
+                letter-spacing: 2px;
+            }
+            body{
+                margin: 0px;
+                background-color: rgba(189, 226, 243, 0.733);
+            }
+            form{
+                background-color: rgb(255, 255, 255);
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                padding: 50px;
+                width:800px;
+                height: auto;
+                margin: 0px auto;
+                border-radius: 0cm 0cm 1cm 1cm;
+            }
+           h4{
+               top: 500px;
+                position:absolute;
+                right: 530px;
+                color:rgb(92, 65, 65);
+                font-size: 20px;
+             }
+            h6{
+                top: 520px;
+                position:absolute;
+                right: 530px;
+                color:rgb(128, 128, 128);
+                font-size: 15px;
+            }
+            h5{
+                position: absolute;
+                top: 700px;
+                right: 760px;
+                font-size: 18px;
+                color:rgb(128, 128, 128);
+                font-family: Arial;
+            }
+            input{
+                padding: 10px;
+                border-radius: 5px;
+                width: 500px;
+                font-size: 20px;
+            }
+            select{
+                padding: 10px;
+                border-radius: 5px;
+                width: 600px;
+                font-size: 20px;
+            }
+            label{
+              font-weight: 540;
+              font-size: 20px;
+              color: #000000;
+              letter-spacing: 0.5px;
+              font-family: Arial;
+            }
+            .option{
+                font-weight: 0px;
+                font-size: 20px;
+            }
+            .inputselect{
+               width: 20px;
+               height: 20px;
+            }
+            .title{
+                position: relative;
+                top: 40px;
+            }
+            img{
+               display: block;
+               margin: 20px auto;
+            }
+            .next{
+                width: auto;
+                background: rgb(223, 184, 255);
+                color: rgb(2, 2, 2);
+                float: right;
+            }
+            #load{
+                position: fixed;
+                background-color: rgba(0, 0, 0, 0.382);
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                top: 0%;
+                justify-content: center;
+                display: none;
+            }
+            #atras{
+                width: auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img src="/IMAGENES.png/OIP (1).png" alt="Logo">
+        <div id="load">
+            <img src="/IMAGENES.png/cargando.gif">
+        </div>
+        <h1 class="TituloCentrado">
+            <span class="title">
+          FORMULARIO DE AUTORIZACIONES</span>
+        </h1>
+        <h5>PARA ASISTENCIA PONERSE EN CONTACTO CON <a href="https://wa.me/18297484467">+1 (829) 748-4467</a></h5>
+        <h4>(FO-OPE-RS-01)</h4>
+        <h6>(código del formulario)</h6>
+        <form id="AUTORIZACION">
+            <labeL>TIPO DE PLAN</labeL>
+            <br>
+            <br>
+            <input class = "inputselect" type="radio" name="plan" value="PLAN BASICO"> <label class="option">PLAN BASICO</label>
+            <br>
+            <br>
+            <input class = "inputselect" type="radio" name="plan" value="PLAN PRIVADO"> <label class="option">PLAN PRIVADO</label>
+            <br>
+            <br>
+            <br>
+            <label>FECHA INDICACION</label>
+            <br>
+            <br>
+            <input type="date" name="fechaind"></input>
+            <br>
+            <br>
+            <label>PROCEDIMIENTO</label>
+            <br>
+            <br>
+            <input type="text" name="procedimiento" id="procedimiento">
+             <br>
+             <br>
+             <label>CENTRO</label>
+             <br>
+             <br>
+             <input type="text" name="CENTRO" id="CENTRO">
+             <br>
+             <br>
+              <label>INDICACION</label>
+              <br>
+              <br>
+              <input type="file" name="INDICACIONFILE" id="respaldo" accept=".pdf, .jpg, .jpeg, .png" multiple>
+              <br>
+              <br>
+              <br>
+            <input class="next" id="boton" type="submit" value="ENVIAR">
+            <input id="atras" type="button" value="ATRAS" onclick="history.back()">
+        </form>
+        <script>
+
+            const boton = document.getElementById('boton');
+            const cargasion = document.getElementById('load');
+            boton.addEventListener('click', async function(X){
+                X.preventDefault();
+                cargasion.style.display = 'flex';
+
+                //guardar pagina actual
+             const autorizacion = document.getElementById('AUTORIZACION');
+             const data = new FormData(autorizacion);
+             const objeto = Object.fromEntries(data.entries());
+             localStorage.setItem('autorizacion', JSON.stringify(objeto));
+
+             // obtener file
+    
+                const archivosdeindicacion = document.getElementById('respaldo').files;
+
+             // para convertir el file en base 64 y pasarlo pa cherpoin
+                const convertbase64 = function(file) {
+                    return new Promise(function(resolve, reject){
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = function(){
+                        resolve(reader.result.split(',')[1]);
+                    };
+                    reader.onerror = function(error){
+                        reject(error);
+                    }
+                    })
+                }
+                
+                const filespagina = JSON.parse(localStorage.getItem(filespagina)) || [];
+
+                for(const file of archivosdeindicacion){
+                    const contenido = await convertbase64(file);
+
+                    filespagina.push({
+                        filename: file.name,
+                        filecontent: contenido
+                    });
+                }
+
+                localStorage.setItem('filespagina', JSON.stringify(filespagina));
+              // INTEGRACION CON SHAREPOINT POWER AUTOMATE  TEST
+               // DATOS FINALES 
+              const datosfinales = {
+              pagina1: JSON.parse(localStorage.getItem('formulario1')) || [],
+              pagina2: JSON.parse(localStorage.getItem('reclamosS2')) || [],
+              autorizacion: JSON.parse(localStorage.getItem('autorizacion')) || [],
+              pagina3: JSON.parse(localStorage.getItem('transferencias')) || [],
+              filespagina: JSON.parse(localStorage.getItem('filespagina')) || []
+             };
+
+              await fetch('https://defaultc78fcef3592941de8ed54896f11961.32.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/30f8a0dd1c71421ebcfea439eb3cdead/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=taaZJr7pjfMy8OswRXhkQLJx9a7RGRtYBsxI_9d_Bu0',
+                {
+                    method: 'POST',
+                    headers: {'content-type': 'application/json'},
+                    body: JSON.stringify(datosfinales)
+                }
+              );
+              cargasion.style.display = 'none';
+              location.href = '/GRACIAS.html';
+            })
+        </script>
+    </body>
+</html>
