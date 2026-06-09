@@ -4,7 +4,8 @@ const express = require('express'); //Importa la librería Express. Express sirv
 const app = express(); //app es tu servidor. asi es como uno puede hacer app.listen, app.post, etc
 const { Pool } = require('pg'); //Importa la clase Pool de la librería PostgreSQL. Un pool es un conjunto de conexiones reutilizables a la base de datos.
 const cors = require('cors'); //Permite que tu frontend haga peticiones a tu API aunque estén en dominios o puertos diferentes. Sin CORS el navegador bloquea la petición. por eso hacemos app.use(cors());
-
+const PORT = process.env.PORT || 3000;
+const path = require('path'); // para q abra en la pagina principal
 // CONEXION A LA BASE DE DATOS EN SUPA BASEE
 
 const basededatos = new Pool({
@@ -14,9 +15,11 @@ const basededatos = new Pool({
     }
 });
 
+app.use(express.static(path.join(__dirname, 'index.html')))
+
 app.use(cors());
 
-app.listen(3000, function () {
+app.listen(PORT, function () {
     console.log('el mejol'); 
 });
 
