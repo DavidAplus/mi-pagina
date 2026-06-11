@@ -333,7 +333,6 @@
             const loading = document.getElementById('loading');
          boton.addEventListener('click', async function(X){
             X.preventDefault();
-            loading.style.display = 'flex';
 
             //FUNCION PARA VOLVER FILE A BASE 64
 
@@ -444,9 +443,10 @@
                 body: JSON.stringify(datosfinales)
               }
                 );
-                loading.style.display = 'none'
                 location.href = '/GRACIAS.html'
-            } else {}
+            } else {
+                location.href='/FORMULARIOS/TRANSFERENCIA.html'
+            }
             });
         </script>
     </body>
