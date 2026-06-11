@@ -7,49 +7,44 @@
    <style>
     h1{
         justify-content: center;
+        display: flex;
+        float: center;
         text-align: center;
         background-color: rgb(98, 98, 212);
         color: white;
         width: auto;
         padding: 50px;
         font-family: arial;
-        margin: 0px auto;
+        margin: auto;
+    }
+    h4{
+        color: rgb(0, 0, 0);
+        font-family: Arial;
     }
     .forms{
-        text-align: center;
-        font-family: Arial;
-        font-size: 25px;;
-        background-color: rgb(209, 229, 243);
-        width: 600px;
-        padding: 20px;
-        margin-left: 1225px;
-        margin-top: 10px;
-        height: 70px;
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-        border-radius: 5px 5px 0cm 0cm;
+    margin-top: 10px;
+    align-items: center;
+    margin-right: 10px;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgb(179, 196, 196);
+    padding: 20px;
+    height: 300px;
+    width: 650px;
     }
     body{
         margin: 0px;
-    }
-    .listado{
-       text-align: center;
-        font-family: Arial;
-        background-color: rgb(239, 241, 243);
-        width: 600px;
-        padding: 20px;
-        margin-left: 1225px;
-        margin-top: 0px;
-        height: 200px;
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-        border-radius: 0cm 0cm 10px 10px;
     }
     .listado input{
         width: 600px;
         height: 35px;
         margin-top: 2px;
+        background-color: rgb(230, 230, 230);
     }
     .listado input:hover{
-        background-color: rgb(142, 142, 243);
+        background-color: rgb(98, 98, 212);
         color: rgb(255, 255, 255);
         cursor: pointer;
     }
@@ -58,11 +53,16 @@
 </head>
 
 <body>
+    <div class="ladiligencia"">
  <h1>A PLUS CONSULTING GROUP</h1>
 <div class="forms">
- <h4>SECCION DE FORMULARIOS</h4></div>
+ <h4>SECCION DE FORMULARIOS</h4>
  <div class="listado">
     <input type="button" value="FORMULARIO DE REEMBOLSOS Y AUTORIZACIONES DE SALUD" onclick="location.href='/FORMULARIOS/FORMULARIO%20REEMBOLSOS.html'">
+    <br>
+    <input type="button" style="margin-top: 15px;" value="FORMULARIO DE RECLAMACIONES GENERALES">
  </div>
+</div>
+</div>
 </body>
 </html>
